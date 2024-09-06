@@ -1,0 +1,35 @@
+:root {
+  --color-third: #F5DB13;
+  --color-primary: #F2B807;
+  --color-second: #F28F16;
+  --color-danger: #D93E30;
+  --color-white: #F6F7F9;
+  --color-dark: #212121;
+    --color-green: #73D677;
+
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-decoration: none;
+}
+
+body, input, button, template{
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+  font-size: 1rem;
+}
+
+a {
+  text-decoration: none;
+}
