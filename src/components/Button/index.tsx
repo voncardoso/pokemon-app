@@ -1,21 +1,15 @@
-import style from "./button.module.css";
 import { ButtonProps } from "./types";
+import { useButtonController } from "./useButton.controller";
 
 export const Button = ({ title, color, type, ...props }: ButtonProps) => {
-  const colors: { [key: string]: string } = {
-    primary: "var(--color-green)",
-    second: "var(--color-yellow)",
-    blue: "var(--color-blue)",
-  };
-
-  const buttonStyle = {
-    background: colors[color] || colors.primary,
-  };
-
-  const typeClss = type === "primary" ? style.button : style.buttonSecondary;
+  const controller = useButtonController({ color, type });
 
   return (
-    <button {...props} className={typeClss} style={buttonStyle}>
+    <button
+      {...props}
+      className={controller.typeClss}
+      style={controller.buttonStyle}
+    >
       {title}
     </button>
   );

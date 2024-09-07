@@ -4,3 +4,5 @@ export interface ButtonProps
   color: "primary" | "second" | "blue";
   type: "primary" | "second";
 }
+
+type ButtonControllerProps = Omit<ButtonProps, "title" | "disabled">;

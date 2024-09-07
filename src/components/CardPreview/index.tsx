@@ -1,4 +1,5 @@
 import { AttributesCircle } from "../AttributsCircle";
+import { Button } from "../Button";
 import style from "./style.module.css";
 
 export const CardPreview = () => {
@@ -10,12 +11,12 @@ export const CardPreview = () => {
             <h1>Charizard</h1>
           </header>
           <div className={style.attributes}>
-            <AttributesCircle title="Attack" value={80} size="small" />
-            <AttributesCircle title="Defense" value={80} size="small" />
+            <AttributesCircle title="Ataque" value={80} size="small" />
+            <AttributesCircle title="Defesa" value={80} size="small" />
           </div>
-          <footer>
-            <button>Grass</button>
-            <button>Poison</button>
+          <footer className={style.footer}>
+            <Button title="Terra" color="primary" type="second" />
+            <Button title="Fogo" color="blue" type="second" />
           </footer>
         </div>
       </div>
