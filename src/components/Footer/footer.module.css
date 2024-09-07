@@ -1,20 +1,25 @@
 .container {
   width: 100%;
-    background: transparent;
+  background: transparent;
   padding: 1rem;
+  position: fixed;
+  bottom: 0;
+}
+
+.footer {
+  max-width: 1300px;
+  width: 100%;
   display: flex;
-    justify-content: space-between;
-    align-items: center;
-    max-width: 1125px;
-    position: fixed;
-    bottom: 0;
+  justify-content: space-between;
+  align-items: center;
+  margin: auto;
 }
 
 .container p {
-   font-weight: bold;
-    font-size: 1.125rem;
+  font-weight: bold;
+  font-size: 1.125rem;
 
-  @media (max-width: 450px){
+  @media (max-width: 450px) {
     font-size: 0.75rem;
   }
 }

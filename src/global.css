@@ -1,21 +1,20 @@
 :root {
-  --color-third: #F5DB13;
-  --color-primary: #F2B807;
-  --color-second: #F28F16;
-  --color-danger: #D93E30;
-  --color-white: #F6F7F9;
+  --color-third: #f5db13;
+  --color-primary: #f2b807;
+  --color-second: #f28f16;
+  --color-danger: #d93e30;
+  --color-white: #f6f7f9;
   --color-dark: #212121;
-    --color-green: #73D677;
-
+  --color-green: #73d677;
 }
 
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-body{
+body {
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
@@ -23,7 +22,10 @@ body{
   text-decoration: none;
 }
 
-body, input, button, template{
+body,
+input,
+button,
+template {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;

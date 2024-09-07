@@ -1,19 +1,20 @@
+import { CardPreview } from "../../components/CardPreview";
 import { useHomeController } from "./useHome.controller";
+
+import style from "./style.module.css";
 
 const Pokemons = () => {
   const controller = useHomeController();
 
   return (
-    <>
-      <div>
-        {controller.pokemons?.map((pokemon) => (
-          <div key={pokemon.name}>{pokemon.name}</div>
-        ))}
+    <section className={style.container}>
+      <div className={style.containerPokemons}>
+        {controller.pokemons?.map((pokemon) => <CardPreview />)}
       </div>
 
       <button onClick={controller.handlePreviousPage}>previous</button>
       <button onClick={controller.handleNextPage}>next</button>
-    </>
+    </section>
   );
 };
 

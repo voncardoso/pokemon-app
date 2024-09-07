@@ -5,7 +5,7 @@ export const useHomeController = () => {
   const { useGetPokemons } = PokemonServices();
 
   const [offset, setOffset] = useState<number>(0);
-  const limit = 20;
+  const limit = 9;
 
   const { pokemons, loading } = useGetPokemons(offset, limit);
 
