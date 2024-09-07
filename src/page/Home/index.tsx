@@ -15,7 +15,11 @@ const Home = () => {
             Você pode saber o tipo de Pokémon, seus pontos fortes, desvantagens
             e habilidades
           </h2>
-          <Button title="Veja pokemons" onClick={controller.handleNavigate} />
+          <Button
+            title="Veja pokemons"
+            color="primary"
+            onClick={controller.handleNavigate}
+          />
         </div>
         <div className={style.image}>
           <img src={Banner} alt="banner" />

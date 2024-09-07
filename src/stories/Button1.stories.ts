@@ -6,6 +6,15 @@ const meta = {
   component: Button,
   args: {
     title: "Veja pokemons",
+    color: "primary",
+  },
+  argTypes: {
+    color: {
+      options: ["primary", "second"],
+      control: {
+        type: "inline-radio",
+      },
+    },
   },
   parameters: {
     layout: "centered",
@@ -17,3 +26,9 @@ export default meta;
 type Story = StoryObj<typeof meta>;
 
 export const Primary: Story = {};
+
+export const Secondary: Story = {
+  args: {
+    color: "second",
+  },
+};
