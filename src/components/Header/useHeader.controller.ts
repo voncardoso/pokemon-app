@@ -1,14 +1,14 @@
-import {useState} from "react";
+import { useState } from "react";
 
 export const useHeaderController = () => {
-    const [isActive, setIsActive] = useState<boolean>(false)
+  const [isActive, setIsActive] = useState<boolean>(false);
 
-    const habdleToggleMenu = () => {
-        setIsActive(!isActive)
-    }
+  const habdleToggleMenu = () => {
+    setIsActive(!isActive);
+  };
 
-    return {
-        isActive,
-        habdleToggleMenu
-    }
-}
+  return {
+    isActive,
+    habdleToggleMenu,
+  };
+};

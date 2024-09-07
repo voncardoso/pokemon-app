@@ -1,74 +1,71 @@
 .container {
-    width: 100%;
-    background: var(--color-third);
-    padding: 1rem 2rem;
-
+  width: 100%;
+  background: var(--color-third);
+  padding: 1rem 2rem;
 }
 
 .content {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 
-    width: 100%;
-    max-width: 1125px;
-    margin: auto;
+  width: 100%;
+  max-width: 1125px;
+  margin: auto;
 }
 
 .nav div {
-    display: flex;
-    align-items: center;
-    gap: 4rem;
-    font-size: 1.5rem;
-    line-height: 160%;
+  display: flex;
+  align-items: center;
+  gap: 4rem;
+  font-size: 1.5rem;
+  line-height: 160%;
 
-    @media (max-width: 450px){
-        display: none;
-    }
-}
-
-.nav button{
+  @media (max-width: 450px) {
     display: none;
-    align-items: center;
-    gap: 4rem;
-    font-size: 1.5rem;
-    line-height: 160%;
-    background: transparent;
-    border: none;
-    cursor: pointer;
-
-    @media (max-width: 450px){
-        display: flex;
-    }
+  }
 }
 
+.nav button {
+  display: none;
+  align-items: center;
+  gap: 4rem;
+  font-size: 1.5rem;
+  line-height: 160%;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+
+  @media (max-width: 450px) {
+    display: flex;
+  }
+}
 
 .nav a {
-    width: 100%;
-    padding-bottom: 5px;
-    transition: border-bottom 0.1s;
-    color: var(--color-dark);
+  width: 100%;
+  padding-bottom: 5px;
+  transition: border-bottom 0.1s;
+  color: var(--color-dark);
 
-
-    &:hover {
-        cursor: pointer;
-        border-bottom: var(--color-dark) 3px solid;
-        border-radius: 0 2px;
-    }
+  &:hover {
+    cursor: pointer;
+    border-bottom: var(--color-dark) 3px solid;
+    border-radius: 0 2px;
+  }
 }
 
 @keyframes menuAnimation {
-    0% {
-        opacity: 0;
-        transform: translateY(-10px);
-    }
-    100% {
-        opacity: 1;
-        transform: translateY(0);
-    }
+  0% {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .Menu {
-    transition: all 0.3s;
-    animation: menuAnimation 0.3s ease-in-out;
+  transition: all 0.3s;
+  animation: menuAnimation 0.3s ease-in-out;
 }
