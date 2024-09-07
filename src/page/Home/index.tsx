@@ -18,6 +18,7 @@ const Home = () => {
           <Button
             title="Veja pokemons"
             color="primary"
+            type="primary"
             onClick={controller.handleNavigate}
           />
         </div>
