@@ -4,8 +4,8 @@ import { CardBorder } from "../../components/CardBorder";
 import { ProgressBar } from "../../components/ProgressBar";
 import { capitalizerFirstLetter } from "../../utils/CapitalizerFirstLetter";
 import { removeDash } from "../../utils/RemoveDash";
-import style from "./detailPokemon.module.css";
 import { useDetailPokemonController } from "./useDetailPokemon.controller";
+import style from "./detailPokemon.module.css";
 const DetailPokemon = () => {
   const controller = useDetailPokemonController();
 
