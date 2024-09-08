@@ -78,3 +78,30 @@
   display: flex;
   gap: 40px;
 }
+
+.types {
+  display: flex;
+  align-items: center;
+  justify-content: end;
+  gap: 10px;
+}
+
+.imgVariebles {
+  list-style-type: none;
+  grid-column: 2 / 3;
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 40px;
+  > div {
+    display: flex;
+    text-align: center;
+    font-size: 1.25rem;
+    font-weight: 600;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+  }
+}

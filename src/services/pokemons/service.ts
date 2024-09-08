@@ -1,6 +1,11 @@
 import { useEffect, useState } from "react";
 import useFetch from "../../hooks/useFetch";
-import { PokemonApiResponse, pokemonDetail } from "./types";
+import {
+  PokemonApiResponse,
+  pokemonDetail,
+  PokemonSpacies,
+  PokemonSpaciesPros,
+} from "./types";
 
 export const useGetPokemons = (offset: number, limit: number) => {
   const [pokemons, setPokemons] = useState<pokemonDetail[]>();
@@ -63,5 +68,15 @@ export const useSearchPokemons = (seachName: string) => {
     pokemonDetail,
     pokemonSearch,
     fetchData,
+  };
+};
+
+export const useGetSpecies = (name: string) => {
+  const { data, error, loading } = useFetch<PokemonSpacies>(
+    `https://pokeapi.co/api/v2/pokemon-species/${name}/`
+  );
+
+  return {
+    data,
   };
 };

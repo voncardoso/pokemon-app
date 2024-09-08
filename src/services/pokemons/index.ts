@@ -1,9 +1,10 @@
-import { useGetPokemons, useSearchPokemons } from "./service";
+import { useGetPokemons, useGetSpecies, useSearchPokemons } from "./service";
 
 const PokemonServices = () => {
   return {
     useGetPokemons,
     useSearchPokemons,
+    useGetSpecies,
   };
 };
 

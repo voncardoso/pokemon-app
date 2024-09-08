@@ -1,4 +1,5 @@
 import { AttributesCircle } from "../../components/AttributsCircle";
+import { Button } from "../../components/Button";
 import { CardBorder } from "../../components/CardBorder";
 import { ProgressBar } from "../../components/ProgressBar";
 import { capitalizerFirstLetter } from "../../utils/CapitalizerFirstLetter";
@@ -18,6 +19,21 @@ const DetailPokemon = () => {
           }
           alt={`Foto ${controller.pokemonDetail?.name}`}
         />
+        <div className={style.types}>
+          <Button
+            title={controller.pokemonDetail?.types[0].type.name}
+            color={String(controller.pokemonDetail?.types[0].type.name)}
+            type="second"
+          />
+
+          {controller.pokemonDetail?.types.length === 2 && (
+            <Button
+              title={controller.pokemonDetail?.types[1].type.name}
+              type="second"
+              color="blue"
+            />
+          )}
+        </div>
       </div>
       <div className={style.detail}>
         <h1>
@@ -26,15 +42,29 @@ const DetailPokemon = () => {
 
         <CardBorder>
           <div className={style.ability}>
+            <h3>Group</h3>
+
+            <div>
+              {controller.pokemonSpacies?.egg_groups.map((eggGroup, index) => (
+                <span>
+                  {capitalizerFirstLetter(String(eggGroup.name))}{" "}
+                  {index < 1 && " - "}
+                </span>
+              ))}
+            </div>
+          </div>
+        </CardBorder>
+
+        <CardBorder>
+          <div className={style.ability}>
             <h3>Abilities</h3>
             <div>
-              <span>
-                {capitalizerFirstLetter(
-                  String(controller.pokemonDetail?.abilities[0].ability.name)
-                )}
-              </span>
-              <span>-</span>
-              <span>{controller.pokemonDetail?.abilities[1].ability.name}</span>
+              {controller.pokemonDetail?.abilities.map((ability, index) => (
+                <span>
+                  {capitalizerFirstLetter(String(ability.ability.name))}{" "}
+                  {index < 1 && " - "}
+                </span>
+              ))}
             </div>
           </div>
         </CardBorder>
@@ -55,6 +85,7 @@ const DetailPokemon = () => {
             />
           </div>
         </CardBorder>
+
         <CardBorder>
           <div className={style.attributes}>
             {controller?.stats.map((stat) => (
@@ -67,12 +98,37 @@ const DetailPokemon = () => {
           </div>
         </CardBorder>
       </div>
-      <u>
-        <li>Abilities</li>
-        <li>Stats</li>
-        <li>Types</li>
-        <li>Moves</li>
-      </u>
+      <ul className={style.imgVariebles}>
+        <CardBorder>
+          <div>
+            <div>
+              {controller.defaultSprites.map((img, index) => (
+                <img
+                  key={index}
+                  src={String(img)}
+                  alt={`Imagem ${controller.pokemonDetail?.name}`}
+                />
+              ))}
+            </div>
+            <p>Male</p>
+          </div>
+        </CardBorder>
+
+        <CardBorder>
+          <div>
+            <div>
+              {controller.shinySprites.map((img, index) => (
+                <img
+                  key={index}
+                  src={String(img)}
+                  alt={`Imagem ${controller.pokemonDetail?.name}`}
+                />
+              ))}
+            </div>
+            <p>Famele</p>
+          </div>
+        </CardBorder>
+      </ul>
     </section>
   );
 };
