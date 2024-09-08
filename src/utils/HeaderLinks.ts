@@ -1,4 +1,4 @@
-export  const HeaderLinks =  [
-    { name: 'Home', path: '#' },
-    { name: 'Pokédex', path: '#' },
-]
+export const HeaderLinks = [
+  { name: "Home", path: "/" },
+  { name: "Pokédex", path: "/pokemons" },
+];

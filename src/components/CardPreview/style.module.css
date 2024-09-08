@@ -8,6 +8,15 @@
   cursor: pointer;
 }
 
+@keyframes loading {
+  0% {
+    left: -100%;
+  }
+  100% {
+    left: 100%;
+  }
+}
+
 .info {
   position: relative;
   height: 100%;

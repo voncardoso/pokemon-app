@@ -7,7 +7,7 @@ export const useDetailPokemonController = () => {
   const { useSearchPokemons, useGetSpecies } = PokemonServices();
   const name = useParams().name;
 
-  const { fetchData, pokemonDetail } = useSearchPokemons(String(name));
+  const { fetchData, pokemonDetail, loading } = useSearchPokemons(String(name));
   const { data: pokemonSpacies } = useGetSpecies(String(name));
 
   const handleNavigate = (name: string) => navigate(`pokemons/${name}`);
@@ -41,6 +41,7 @@ export const useDetailPokemonController = () => {
     shinySprites: Object.values(shinySprites),
     defaultSprites: Object.values(defaultSprites),
     stats,
+    loading,
     pokemonSpacies,
     handleNavigate,
   };

@@ -10,12 +10,12 @@ const Pokemons = () => {
   return (
     <section className={style.container}>
       <h1>
-        {controller.totalPokemons} Pokemos para você escolher o seu favorito
+        {controller.totalPokemons} Pokemon for you to choose your favorite
       </h1>
       <input
         value={controller.seachName}
         type="text"
-        placeholder="Buscar pokemon..."
+        placeholder="Search pokemon..."
         onChange={controller.handleSeach}
       />
       <div className={style.containerPokemons}>
@@ -23,8 +23,8 @@ const Pokemons = () => {
           ? controller.pokemonSearch?.map((pokemon) => (
               <CardPreview
                 pokemon={pokemon}
+                loading={controller.loading}
                 onClick={() => {
-                  console.log("click");
                   controller.handleNavigate(pokemon.name);
                 }}
               />
@@ -32,8 +32,8 @@ const Pokemons = () => {
           : controller.pokemons?.map((pokemon) => (
               <CardPreview
                 pokemon={pokemon}
+                loading={controller.loading}
                 onClick={() => {
-                  console.log("click");
                   controller.handleNavigate(pokemon.name);
                 }}
               />

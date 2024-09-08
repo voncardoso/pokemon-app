@@ -14,7 +14,12 @@ export const Header = () => {
         <nav className={style.nav}>
           <div>
             {HeaderLinks.map((link) => (
-              <a href={link.path}>{link.name}</a>
+              <a
+                style={controller.getLinkStyle(link.path, controller.pathname)}
+                href={link.path}
+              >
+                {link.name}
+              </a>
             ))}
           </div>
           <button onClick={controller.habdleToggleMenu}>

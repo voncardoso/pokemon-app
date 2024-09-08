@@ -10,13 +10,13 @@ const Home = () => {
     <section className={style.container}>
       <div className={style.content}>
         <div className={style.coverText}>
-          <h1>Encontre todos os seus Pokémons favoritos</h1>
+          <h1>Find all your favorite Pokemon</h1>
           <h2>
-            Você pode saber o tipo de Pokémon, seus pontos fortes, desvantagens
-            e habilidades
+            You can know the type of Pokemon, its strengths, disadvantages and
+            abilities
           </h2>
           <Button
-            title="Veja pokemons"
+            title="See pokemons"
             color="primary"
             type="primary"
             onClick={controller.handleNavigate}

@@ -1,11 +1,6 @@
 import { useEffect, useState } from "react";
 import useFetch from "../../hooks/useFetch";
-import {
-  PokemonApiResponse,
-  pokemonDetail,
-  PokemonSpacies,
-  PokemonSpaciesPros,
-} from "./types";
+import { PokemonApiResponse, pokemonDetail, PokemonSpacies } from "./types";
 
 export const useGetPokemons = (offset: number, limit: number) => {
   const [pokemons, setPokemons] = useState<pokemonDetail[]>();
@@ -49,8 +44,9 @@ export const useGetPokemons = (offset: number, limit: number) => {
 export const useSearchPokemons = (seachName: string) => {
   const [pokemonSearch, setPokemonSearch] = useState<pokemonDetail[]>();
   const [pokemonDetail, setPokemonDetail] = useState<pokemonDetail>();
-
+  const [loading, setLoading] = useState(false);
   const fetchData = async () => {
+    setLoading(true);
     try {
       const pokemonResponse = await fetch(
         `https://pokeapi.co/api/v2/pokemon/${seachName}`
@@ -61,18 +57,22 @@ export const useSearchPokemons = (seachName: string) => {
       return pokemonData;
     } catch (err) {
       console.error(err as Error);
+      setLoading(false);
+    } finally {
+      setLoading(false);
     }
   };
 
   return {
     pokemonDetail,
     pokemonSearch,
+    loading,
     fetchData,
   };
 };
 
 export const useGetSpecies = (name: string) => {
-  const { data, error, loading } = useFetch<PokemonSpacies>(
+  const { data } = useFetch<PokemonSpacies>(
     `https://pokeapi.co/api/v2/pokemon-species/${name}/`
   );
 

@@ -6,19 +6,25 @@ import { capitalizerFirstLetter } from "../../utils/CapitalizerFirstLetter";
 import { removeDash } from "../../utils/RemoveDash";
 import { useDetailPokemonController } from "./useDetailPokemon.controller";
 import style from "./detailPokemon.module.css";
+import { CardLoadingPreview } from "../../components/CardLoadingPreview";
 const DetailPokemon = () => {
   const controller = useDetailPokemonController();
-
+  console.log(controller.loading);
   return (
     <section className={style.container}>
       <div>
-        <img
-          className={style.image}
-          src={
-            controller.pokemonDetail?.sprites.other?.dream_world.front_default
-          }
-          alt={`Foto ${controller.pokemonDetail?.name}`}
-        />
+        {controller.loading ? (
+          <CardLoadingPreview height={600} />
+        ) : (
+          <img
+            className={style.image}
+            src={
+              controller.pokemonDetail?.sprites.other?.dream_world.front_default
+            }
+            alt={`Foto ${controller.pokemonDetail?.name}`}
+          />
+        )}
+
         <div className={style.types}>
           <Button
             title={controller.pokemonDetail?.types[0].type.name}
