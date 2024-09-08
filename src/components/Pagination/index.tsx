@@ -1,18 +1,18 @@
 import { ChangeEvent } from "react";
 import style from "./pagination.module.css";
 interface PaginationProps {
-  page: number;
+  page: string;
   seachPage: string;
   next: () => void;
   previous: () => void;
   handlePage: (event: ChangeEvent<HTMLInputElement>) => void;
 }
 export const Pagination = ({
+  page,
+  seachPage,
   next,
   previous,
-  page,
   handlePage,
-  seachPage,
 }: PaginationProps) => {
   return (
     <div className={style.pagination}>

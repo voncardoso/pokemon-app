@@ -31,7 +31,7 @@ const Pokemons = () => {
       <Pagination
         handlePage={controller.handlePage}
         seachPage={controller.seachPage}
-        page={controller.page}
+        page={`${controller.page} de ${controller.totalPages}`}
         next={controller.handleNextPage}
         previous={controller.handlePreviousPage}
       />

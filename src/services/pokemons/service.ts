@@ -10,7 +10,7 @@ export const useGetPokemons = (offset: number, limit: number) => {
     limit
   );
 
-  const totalPokemons = data?.count;
+  const totalPokemons = data?.count ?? 0;
 
   const fetchData = async (data: PokemonApiResponse) => {
     try {

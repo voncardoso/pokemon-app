@@ -13,6 +13,9 @@ export const useHomeController = () => {
     seachName.toLocaleLowerCase()
   );
 
+  const page: number = Math.floor(offset / limit) + 1;
+  const totalPages = Math.ceil(totalPokemons / limit);
+
   const handleNextPage = () => {
     setOffset((prevOffset) => prevOffset + limit);
   };
@@ -33,8 +36,6 @@ export const useHomeController = () => {
     );
   }, [seachPage]);
 
-  const page: number = Math.floor(offset / limit) + 1;
-
   const handleSeach = (event: ChangeEvent<HTMLInputElement>) => {
     setSeachName(event.target.value);
   };
@@ -54,6 +55,7 @@ export const useHomeController = () => {
     seachPage,
     seachName,
     pokemonSearch,
+    totalPages,
     handleSeach,
     handleNextPage,
     handlePreviousPage,
