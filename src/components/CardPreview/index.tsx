@@ -2,7 +2,7 @@ import { capitalizerFirstLetter } from "../../utils/CapitalizerFirstLetter";
 import { typeColors } from "../../utils/TypeColors";
 import { AttributesCircle } from "../AttributsCircle";
 import { Button } from "../Button";
-import { CardLoadingPreview } from "../CardLoadingPreview";
+import { CardLoading } from "../CardLoading";
 import style from "./style.module.css";
 import { CardPreviewProps } from "./types";
 import { useCardPreviewController } from "./useCardPrreview.controller";
@@ -17,7 +17,7 @@ export const CardPreview = ({
   return (
     <>
       {loading ? (
-        <CardLoadingPreview height={160} />
+        <CardLoading height={160} />
       ) : (
         <div onClick={onClick} className={style.card}>
           <div className={style.info}>

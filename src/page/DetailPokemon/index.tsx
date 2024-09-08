@@ -6,7 +6,7 @@ import { capitalizerFirstLetter } from "../../utils/CapitalizerFirstLetter";
 import { removeDash } from "../../utils/RemoveDash";
 import { useDetailPokemonController } from "./useDetailPokemon.controller";
 import style from "./detailPokemon.module.css";
-import { CardLoadingPreview } from "../../components/CardLoadingPreview";
+import { CardLoading } from "../../components/CardLoading";
 const DetailPokemon = () => {
   const controller = useDetailPokemonController();
   console.log(controller.loading);
@@ -14,7 +14,7 @@ const DetailPokemon = () => {
     <section className={style.container}>
       <div>
         {controller.loading ? (
-          <CardLoadingPreview height={600} />
+          <CardLoading height={600} />
         ) : (
           <img
             className={style.image}
