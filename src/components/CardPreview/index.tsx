@@ -1,26 +1,55 @@
+import { capitalizerFirstLetter } from "../../utils/CapitalizerFirstLetter";
+import { typeColors } from "../../utils/TypeColors";
 import { AttributesCircle } from "../AttributsCircle";
 import { Button } from "../Button";
 import style from "./style.module.css";
+import { CardPreviewProps } from "./types";
+import { useCardPreviewController } from "./useCardPrreview.controller";
 
-export const CardPreview = () => {
+export const CardPreview = ({ pokemon }: CardPreviewProps) => {
+  const controller = useCardPreviewController({ pokemon });
+
   return (
     <div className={style.card}>
       <div className={style.info}>
         <div className={style.infoDetail}>
           <header>
-            <h1>Charizard</h1>
+            <h1>{capitalizerFirstLetter(pokemon.name)}</h1>
           </header>
           <div className={style.attributes}>
-            <AttributesCircle title="Ataque" value={80} size="small" />
-            <AttributesCircle title="Defesa" value={80} size="small" />
+            <AttributesCircle
+              title="Ataque"
+              value={controller.stats.attack}
+              size="small"
+            />
+            <AttributesCircle
+              title="Defesa"
+              value={controller.stats.defense}
+              size="small"
+            />
           </div>
           <footer className={style.footer}>
-            <Button title="Terra" color="primary" type="second" />
-            <Button title="Fogo" color="blue" type="second" />
+            <Button
+              title={pokemon.types[0].type.name}
+              color={pokemon.types[0].type.name}
+              type="second"
+            />
+            {pokemon.types.length === 2 && (
+              <Button
+                title={pokemon.types[1].type.name}
+                type="second"
+                color="blue"
+              />
+            )}
           </footer>
         </div>
       </div>
-      <div className={style.image}>imagem</div>
+      <div
+        className={style.image}
+        style={{ backgroundColor: typeColors[pokemon.types[0].type.name] }}
+      >
+        <img src={pokemon.sprites.front_default} alt="" />
+      </div>
     </div>
   );
 };

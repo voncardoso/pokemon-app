@@ -17,6 +17,8 @@ export const useHomeController = () => {
     setOffset((prevOffset) => Math.max(prevOffset - limit, 0));
   };
 
+  console.log(pokemons);
+
   return {
     pokemons,
     loading,

@@ -9,7 +9,9 @@ const Pokemons = () => {
   return (
     <section className={style.container}>
       <div className={style.containerPokemons}>
-        {controller.pokemons?.map((pokemon) => <CardPreview />)}
+        {controller.pokemons?.map((pokemon) => (
+          <CardPreview pokemon={pokemon} />
+        ))}
       </div>
 
       <button onClick={controller.handlePreviousPage}>previous</button>

@@ -1,8 +1,10 @@
 export interface ButtonProps
   extends React.ButtonHTMLAttributes<HTMLButtonElement> {
-  title: string;
-  color: "primary" | "second" | "blue";
+  title: string | undefined;
+  color: "primary" | "second" | "blue" | string;
   type: "primary" | "second";
 }
 
-type ButtonControllerProps = Omit<ButtonProps, "title" | "disabled">;
+type ButtonControllerProps = Omit<ButtonProps, "title" | "disabled"> & {
+  color: string;
+};
