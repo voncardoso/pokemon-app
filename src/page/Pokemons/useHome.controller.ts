@@ -1,13 +1,17 @@
-import { useState } from "react";
+import { ChangeEvent, useEffect, useState } from "react";
 import PokemonServices from "../../services/pokemons";
 
 export const useHomeController = () => {
-  const { useGetPokemons } = PokemonServices();
-
+  const { useGetPokemons, useSearchPokemons } = PokemonServices();
+  const [seachName, setSeachName] = useState<string>("");
+  const [seachPage, setSeachPage] = useState<string>("");
   const [offset, setOffset] = useState<number>(0);
   const limit = 9;
 
-  const { pokemons, loading } = useGetPokemons(offset, limit);
+  const { pokemons, loading, totalPokemons } = useGetPokemons(offset, limit);
+  const { fetchData, pokemonSearch } = useSearchPokemons(
+    seachName.toLocaleLowerCase()
+  );
 
   const handleNextPage = () => {
     setOffset((prevOffset) => prevOffset + limit);
@@ -17,13 +21,42 @@ export const useHomeController = () => {
     setOffset((prevOffset) => Math.max(prevOffset - limit, 0));
   };
 
-  console.log(pokemons);
+  const handlePage = (event: ChangeEvent<HTMLInputElement>) => {
+    setSeachPage(event.target.value);
+  };
+
+  useEffect(() => {
+    setOffset(
+      (Number(seachPage) - 1) * limit === -9
+        ? 1
+        : (Number(seachPage) - 1) * limit
+    );
+  }, [seachPage]);
+
+  const page: number = Math.floor(offset / limit) + 1;
+
+  const handleSeach = (event: ChangeEvent<HTMLInputElement>) => {
+    setSeachName(event.target.value);
+  };
+
+  useEffect(() => {
+    if (seachName.length > 0) {
+      fetchData();
+    }
+  }, [seachName]);
 
   return {
     pokemons,
+    totalPokemons,
     loading,
     offset,
+    page,
+    seachPage,
+    seachName,
+    pokemonSearch,
+    handleSeach,
     handleNextPage,
     handlePreviousPage,
+    handlePage,
   };
 };

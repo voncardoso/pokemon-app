@@ -1,0 +1,66 @@
+.pagination {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: end;
+  gap: 0.5rem;
+  padding: 1rem 0;
+
+  > button {
+    border: none;
+    cursor: pointer;
+    font-size: 0.75rem;
+    font-weight: 700;
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+    background: var(--color-gray);
+
+    &:hover {
+      opacity: 0.9;
+      transition: all 0.3s;
+    }
+  }
+
+  > span {
+    background: var(--color-gray);
+    border: none;
+    cursor: pointer;
+    font-size: 0.75rem;
+    font-weight: 700;
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+  }
+
+  > input {
+    border: none;
+    cursor: pointer;
+
+    width: 100px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+    background: var(--color-gray);
+  }
+}
+
+.search {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+
+  > span {
+    font-size: 0.75rem;
+    font-weight: 700;
+  }
+  > input {
+    border: none;
+    cursor: pointer;
+    width: 100px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+    background: var(--color-gray);
+  }
+}
