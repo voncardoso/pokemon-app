@@ -1,0 +1,34 @@
+.container {
+  width: 300px;
+  background-color: #e0dfdf;
+  border-radius: 25px;
+  overflow: hidden;
+  height: 10px;
+}
+
+.title {
+  font-size: 1rem;
+  font-weight: 400;
+}
+
+.scoring {
+  display: flex;
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+
+.progressPrimary {
+  height: 100%;
+  background-color: var(--color-yellow);
+  width: 0;
+  transition: width 0.3s ease-in-out;
+  border-radius: 25px;
+}
+
+.progressSecond {
+  height: 100%;
+  background-color: var(--color-green);
+  width: 0;
+  transition: width 0.3s ease-in-out;
+  border-radius: 25px;
+}

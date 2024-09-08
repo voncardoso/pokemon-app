@@ -6,11 +6,11 @@ import style from "./style.module.css";
 import { CardPreviewProps } from "./types";
 import { useCardPreviewController } from "./useCardPrreview.controller";
 
-export const CardPreview = ({ pokemon }: CardPreviewProps) => {
+export const CardPreview = ({ pokemon, onClick }: CardPreviewProps) => {
   const controller = useCardPreviewController({ pokemon });
 
   return (
-    <div className={style.card}>
+    <div onClick={onClick} className={style.card}>
       <div className={style.info}>
         <div className={style.infoDetail}>
           <header>
@@ -48,7 +48,7 @@ export const CardPreview = ({ pokemon }: CardPreviewProps) => {
         className={style.image}
         style={{ backgroundColor: typeColors[pokemon.types[0].type.name] }}
       >
-        <img src={pokemon.sprites.front_default} alt="" />
+        <img src={pokemon.sprites.other?.showdown.front_default} alt="" />
       </div>
     </div>
   );

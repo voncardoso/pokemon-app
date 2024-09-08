@@ -21,10 +21,22 @@ const Pokemons = () => {
       <div className={style.containerPokemons}>
         {controller.seachName.length > 0
           ? controller.pokemonSearch?.map((pokemon) => (
-              <CardPreview pokemon={pokemon} />
+              <CardPreview
+                pokemon={pokemon}
+                onClick={() => {
+                  console.log("click");
+                  controller.handleNavigate(pokemon.name);
+                }}
+              />
             ))
           : controller.pokemons?.map((pokemon) => (
-              <CardPreview pokemon={pokemon} />
+              <CardPreview
+                pokemon={pokemon}
+                onClick={() => {
+                  console.log("click");
+                  controller.handleNavigate(pokemon.name);
+                }}
+              />
             ))}
       </div>
 

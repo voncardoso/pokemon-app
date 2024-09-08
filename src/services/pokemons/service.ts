@@ -43,6 +43,7 @@ export const useGetPokemons = (offset: number, limit: number) => {
 
 export const useSearchPokemons = (seachName: string) => {
   const [pokemonSearch, setPokemonSearch] = useState<pokemonDetail[]>();
+  const [pokemonDetail, setPokemonDetail] = useState<pokemonDetail>();
 
   const fetchData = async () => {
     try {
@@ -51,6 +52,7 @@ export const useSearchPokemons = (seachName: string) => {
       );
       const pokemonData = await pokemonResponse.json();
       setPokemonSearch([pokemonData]);
+      setPokemonDetail(pokemonData);
       return pokemonData;
     } catch (err) {
       console.error(err as Error);
@@ -58,6 +60,7 @@ export const useSearchPokemons = (seachName: string) => {
   };
 
   return {
+    pokemonDetail,
     pokemonSearch,
     fetchData,
   };

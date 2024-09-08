@@ -1,12 +1,16 @@
 import { ChangeEvent, useEffect, useState } from "react";
 import PokemonServices from "../../services/pokemons";
+import { useNavigate } from "react-router-dom";
 
 export const useHomeController = () => {
+  const navigate = useNavigate();
   const { useGetPokemons, useSearchPokemons } = PokemonServices();
   const [seachName, setSeachName] = useState<string>("");
   const [seachPage, setSeachPage] = useState<string>("");
   const [offset, setOffset] = useState<number>(0);
   const limit = 9;
+
+  const handleNavigate = (name: string) => navigate(`${name}`);
 
   const { pokemons, loading, totalPokemons } = useGetPokemons(offset, limit);
   const { fetchData, pokemonSearch } = useSearchPokemons(
@@ -28,6 +32,10 @@ export const useHomeController = () => {
     setSeachPage(event.target.value);
   };
 
+  const handleSeach = (event: ChangeEvent<HTMLInputElement>) => {
+    setSeachName(event.target.value);
+  };
+
   useEffect(() => {
     setOffset(
       (Number(seachPage) - 1) * limit === -9
@@ -35,10 +43,6 @@ export const useHomeController = () => {
         : (Number(seachPage) - 1) * limit
     );
   }, [seachPage]);
-
-  const handleSeach = (event: ChangeEvent<HTMLInputElement>) => {
-    setSeachName(event.target.value);
-  };
 
   useEffect(() => {
     if (seachName.length > 0) {
@@ -56,6 +60,7 @@ export const useHomeController = () => {
     seachName,
     pokemonSearch,
     totalPages,
+    handleNavigate,
     handleSeach,
     handleNextPage,
     handlePreviousPage,
