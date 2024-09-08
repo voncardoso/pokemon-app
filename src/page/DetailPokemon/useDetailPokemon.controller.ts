@@ -10,7 +10,7 @@ export const useDetailPokemonController = () => {
 
   const handleNavigate = (name: string) => navigate(`pokemons/${name}`);
 
-  console.log(pokemonDetail);
+  const stats = pokemonDetail?.stats.slice(1) ?? [];
 
   useEffect(() => {
     fetchData();
@@ -18,6 +18,7 @@ export const useDetailPokemonController = () => {
 
   return {
     pokemonDetail,
+    stats,
     handleNavigate,
   };
 };

@@ -2,11 +2,12 @@ import { AttributesCircle } from "../../components/AttributsCircle";
 import { CardBorder } from "../../components/CardBorder";
 import { ProgressBar } from "../../components/ProgressBar";
 import { capitalizerFirstLetter } from "../../utils/CapitalizerFirstLetter";
+import { removeDash } from "../../utils/RemoveDash";
 import style from "./detailPokemon.module.css";
 import { useDetailPokemonController } from "./useDetailPokemon.controller";
 const DetailPokemon = () => {
   const controller = useDetailPokemonController();
-  console.log(controller.pokemonDetail?.stats[0].base_stat);
+
   return (
     <section className={style.container}>
       <div>
@@ -54,21 +55,17 @@ const DetailPokemon = () => {
             />
           </div>
         </CardBorder>
-
-        <div className={style.attributes}>
-          <div>
-            <AttributesCircle title="Ataque" value={100} size="large" />
-            <AttributesCircle title="Ataque" value={100} size="large" />
-            <AttributesCircle title="Ataque" value={100} size="large" />
-            <AttributesCircle title="Ataque" value={100} size="large" />
-            <AttributesCircle title="Ataque" value={100} size="large" />
+        <CardBorder>
+          <div className={style.attributes}>
+            {controller?.stats.map((stat) => (
+              <AttributesCircle
+                title={capitalizerFirstLetter(removeDash(stat.stat.name))}
+                value={stat.base_stat}
+                size="large"
+              />
+            ))}
           </div>
-        </div>
-        <ul>
-          <li>Stats</li>
-          <li>Types</li>
-          <li>Moves</li>
-        </ul>
+        </CardBorder>
       </div>
       <u>
         <li>Abilities</li>

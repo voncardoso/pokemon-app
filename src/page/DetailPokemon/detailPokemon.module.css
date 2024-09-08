@@ -56,25 +56,11 @@
 
 .attributes {
   width: 100%;
-  padding: 20px;
-
-  /* border-radius: 8px;
-  border: 2px solid var(--color-gray); */
-
-  > h3 {
-    font-size: 1.25rem;
-    font-weight: 400;
-    margin-bottom: 5px;
-  }
-
-  > div {
-    width: 100%;
-    display: grid;
-    justify-content: space-between;
-    grid-template-columns: 1fr 1fr 1fr;
-    gap: 2rem;
-    gap: 10px;
-  }
+  display: grid;
+  justify-content: space-between;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 2rem;
+  gap: 10px;
 }
 
 .attributesCircleBoder {
