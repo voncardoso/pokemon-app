@@ -6,7 +6,7 @@ import { pokemonMock } from "../../../mocks/pokemon";
 jest.mock("../../../hooks/useFetch");
 
 describe("useGetSpecies", () => {
-  it("deve fazer a chamada correta à API", () => {
+  test("deve fazer a chamada correta à API", () => {
     (useFetch as jest.Mock).mockReturnValue({ data: pokemonMock });
 
     const { result } = renderHook(() => useGetSpecies("bulbasaur"));
