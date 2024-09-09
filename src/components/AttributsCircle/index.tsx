@@ -6,8 +6,7 @@ export const AttributesCircle = ({
   value,
   size,
 }: AttributesCircleProps) => {
-  const sizeClass =
-    size === "small" ? style.containerSmall : style.containerLarge;
+  const sizeClass = size === "small" ? style.small : style.large;
 
   return (
     <div className={sizeClass}>
