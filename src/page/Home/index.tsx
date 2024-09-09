@@ -1,6 +1,6 @@
 import Banner from "../../assets/bannerComplete1.5x.png";
 import { Button } from "../../components/Button";
-import style from "./Home.module.css";
+import style from "./home.module.css";
 import { useHomeController } from "./useHome.controller";
 
 const Home = () => {
