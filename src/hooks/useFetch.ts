@@ -23,7 +23,6 @@ const useFetch = <T>(
       const url = `${baseUrl}?offset=${offset}&limit=${limit}/language/13`;
       const response = await fetch(url);
 
-      // Verifica se a resposta é ok
       if (!response.ok) {
         throw new Error(`HTTP error! Status: ${response.status}`);
       }

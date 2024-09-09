@@ -1,8 +1,8 @@
 import { renderHook } from "@testing-library/react-hooks";
 import { useGetSpecies } from "../service";
-import useFetch from "../../../hooks/useFetch";
 import { pokemonMock } from "../../../mocks/pokemon";
 
+import useFetch from "../../../hooks/useFetch";
 jest.mock("../../../hooks/useFetch");
 
 describe("useGetSpecies", () => {

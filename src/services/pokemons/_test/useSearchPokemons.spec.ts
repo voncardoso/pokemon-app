@@ -42,7 +42,6 @@ describe("useSearchPokemons", () => {
       await result.current.fetchData();
     });
 
-    // Verifique se o estado foi atualizado corretamente após erro
     expect(result.current.pokemonSearch).toBeUndefined();
     expect(result.current.pokemonDetail).toBeUndefined();
     expect(result.current.loading).toBe(false);
