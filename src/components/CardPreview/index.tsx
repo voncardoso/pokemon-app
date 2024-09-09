@@ -57,7 +57,10 @@ export const CardPreview = ({
             className={style.image}
             style={{ backgroundColor: typeColors[pokemon.types[0].type.name] }}
           >
-            <img src={pokemon.sprites.other?.showdown.front_default} alt="" />
+            <img
+              src={pokemon.sprites.other?.showdown.front_default}
+              alt={`${pokemon.name} image`}
+            />
           </div>
         </div>
       )}
