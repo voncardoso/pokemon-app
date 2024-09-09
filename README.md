@@ -1,50 +1,82 @@
-# React + TypeScript + Vite
+# Pokémon App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+### Descrição
+Esta aplicação permite que os usuários visualizem uma lista de Pokémon e acessem detalhes individuais de cada um. A aplicação foi desenvolvida utilizando React, TypeScript, e integra-se com a PokeAPI para buscar os dados dos Pokémon.
 
-Currently, two official plugins are available:
+## Índice
+1. [Instalação](#instalação)
+2. [Scripts Disponíveis](#scripts-disponíveis)
+3. [Funcionalidades](#funcionalidades)
+4. [Storybook](#storybook)
+5. [Tecnologias Utilizadas](#tecnologias-utilizadas)
+6. [Licença](#licença)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Instalação
 
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
-
-- Configure the top-level `parserOptions` property like this:
-
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+1. [Clone o repositório](#clone-o-repositório):
+```
+git clone https://github.com/usuario/pokemon-app.git
+cd pokemon-app
 ```
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
-
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
-
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
+2. [Instale as dependências usando pnpm:):
 ```
+pnpm install
+```
+
+## Scripts Disponíveis
+
+- **`pnpm start`:**
+    - Inicia o aplicativo em modo de desenvolvimento.
+    - Abra [http://localhost:5173/](http://localhost:5173/) para ver no navegador.
+
+- **`pnpm build`:**
+    - Compila o aplicativo para produção na pasta `build`.
+
+- **`pnpm test`:**
+    - Executa os testes unitários.
+
+- **`pnpm storybook`:**
+    - Inicia o Storybook em modo de desenvolvimento.
+    - Abra [http://localhost:6006](http://localhost:6006) para ver no navegador.
+
+- **`pnpm build-storybook`:**
+    - Compila a documentação do Storybook para a pasta `storybook-static`.
+
+## Funcionalidades
+
+- **Listagem de Pokémon:**
+    - Visualize uma lista de Pokémon com paginação.
+
+- **Detalhamento de Pokémon:**
+    - Clique em um Pokémon para ver seus detalhes, como tipos, habilidades e estatísticas.
+
+- **Busca de Pokémon:**
+    - Busque Pokémon pelo nome ou ID.
+
+- **Design Responsivo:**
+    - A aplicação é totalmente responsiva e funciona bem em dispositivos móveis e desktops.
+
+
+## Storybook
+O Storybook é utilizado para documentar e testar os componentes da aplicação de forma isolada.
+Para visualizar os componentes, use o comando:
+
+```
+pnpm storybook
+```
+
+## Tecnologias Utilizadas
+
+- **React.js** - Biblioteca para construção de interfaces de usuário.
+- **TypeScript** - Superset do JavaScript que adiciona tipagem estática.
+- **pnpm** - Gerenciador de pacotes rápido e eficiente.
+- **Storybook** - Ferramenta para desenvolvimento de componentes isolados.
+- **PokeAPI** - API usada para obter dados dos Pokémon.
+- **Jest** - Framework de testes em JavaScript.
+- **React Testing Library** - Utilitário para testar componentes React.
+- **CSS Modules** - Estilização dos componentes.
+
+## Licença
+
+Este projeto está licenciado sob a licença [MIT](./LICENSE).
