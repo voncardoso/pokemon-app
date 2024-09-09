@@ -22,3 +22,8 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# Arquivos gerados por testes
+coverage/
+*.lcov
+*.snap

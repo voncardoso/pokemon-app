@@ -7,7 +7,7 @@ export const useButtonController = ({ color, type }: ButtonControllerProps) => {
     background: typeColors[color] || typeColors.primary,
   };
 
-  const typeClss = type === "primary" ? style.button : style.buttonSecondary;
+  const typeClss = type === "primary" ? style.primary : style.second;
 
   return {
     buttonStyle,
